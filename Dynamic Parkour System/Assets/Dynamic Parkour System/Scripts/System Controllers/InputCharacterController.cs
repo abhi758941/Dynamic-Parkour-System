@@ -38,6 +38,7 @@ namespace Climbing
         [HideInInspector] public bool run;
         [HideInInspector] public bool jump;
         [HideInInspector] public bool drop;
+        
 
         private void OnEnable()
         {

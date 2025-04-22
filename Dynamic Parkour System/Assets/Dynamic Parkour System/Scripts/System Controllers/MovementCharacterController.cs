@@ -189,6 +189,17 @@ namespace Climbing
                 rb.velocity += Vector3.up * Physics.gravity.y * (fallForce - 1) * Time.fixedDeltaTime;
             }
         }
+        public void Jump(Vector3 direction)  
+        {  
+            Debug.Log("Jump function is called");
+            if (controller.isGrounded && !controller.isJumping)  
+            {  
+                Debug.Log("Jumping");
+                controller.isJumping = true;  
+                // rb.AddForce(direction * jumpForce + Vector3.up * verticalJumpForce, ForceMode.Impulse);  
+                rb.AddForce(direction * 1000 + Vector3.up * 700, ForceMode.Impulse);
+            }  
+        }
 
         /// <summary>
         /// Avoids the Player from falling unintentionally

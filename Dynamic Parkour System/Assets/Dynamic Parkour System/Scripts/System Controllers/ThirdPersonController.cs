@@ -105,7 +105,26 @@ namespace Climbing
                 {
                     ToggleWalk();
                 }
+                
             }
+            if (!isVaulting && characterInput.jump)  
+            {  
+                Debug.Log("Space button pressed");
+                // if (characterInput.movement.magnitude < 0.1f)  
+                {  
+                    // Trigger stationary jump  
+                    characterAnimation.JumpPrediction(false);
+                    Debug.Log(Vector3.up);
+                    characterMovement.Jump(new Vector3(1f , 0 , 1f)  );  
+                }  
+                // else  
+                // {  
+                //     // Trigger moving jump (preserve horizontal velocity)  
+                //     Vector3 dir = new Vector3(characterInput.movement.x, 0, characterInput.movement.y);  
+                //     Debug.Log(dir.normalized);
+                //     characterMovement.Jump(dir.normalized);  
+                // }  
+            }  
         }
 
         private bool OnGround()
